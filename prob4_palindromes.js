@@ -9,7 +9,6 @@ let getThreeDigitProducts = function () {
   for (let i=999; i>600; i--) {
     for (let j=999; j>600; j--) {
       if (isPalindrome(i*j)){
-        //console.log(i*j);
         products.push(i*j);
       }
     }
@@ -26,9 +25,9 @@ let sortNumbers = function (a, b) {
   return a - b;
 }
 
-console.log(isPalindrome(9009));
-console.log(isPalindrome(9049));
-console.log(isPalindrome(9010109));
-console.log(sortThreeDigitProducts([12,16,99,4,36]).pop());
+// console.log(isPalindrome(9009));
+// console.log(isPalindrome(9049));
+// console.log(isPalindrome(9010109));
+// console.log(sortThreeDigitProducts([12,16,99,4,36]));
 
 console.log(getThreeDigitProducts().pop());
