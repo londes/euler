@@ -1,6 +1,7 @@
-let number = 10;
+let snUtil = require('../utils/non_scientific_notation');
+
+let number = 100;
 let factorialNums = [];
-let initialValue = 1;
 
 // generate an array of numbers based on the starting value
 for (i=number;i>0;i--){
@@ -14,6 +15,7 @@ let factorialProduct = factorialNums.reduce(
     (previousValue, currentValue) => previousValue * currentValue
 );
 
+factorialProduct = snUtil.toFixed(factorialProduct);
 console.log("product: " + factorialProduct);
 
 // take the product of all numbers in array, and convert to array of the digits of that product
