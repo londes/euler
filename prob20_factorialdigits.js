@@ -3,12 +3,12 @@
 
 // let snUtil = require('../utils/non_scientific_notation');
 
-let number = 100;
+let number = BigInt(100);
 let factorialNums = [];
 
 // generate an array of numbers based on the starting value
 for (i=number;i>0;i--){
-    factorialNums.push(i);
+    factorialNums.push(BigInt(i));
 }
 
 console.log("outputs for number equals: " + number);
