@@ -39,3 +39,4 @@ let getPrimeFactors = function (testValue, containedPrimesArray) {
 
 console.log(getPrimeFactors(600851475143, generatePrimes(600851475143)));
 //console.log(generatePrimes(600851475143));
+console.log(getPrimeFactors)
