@@ -37,7 +37,13 @@ digitsArray.forEach(value => {
     factorSumsDict.push({value: getFactorsSum(value)})
 })
 
-// for each key, check for a matching value
+// for each key, check for a matching value and push those
+// values to an array
+let matchingAmicables = [];
+factorSumsDict.forEach(digitObj => {
+    // check for matchign values in the object array. Might be good to 
+    // use a for loop here to access each element in the objects array
+})
 
 // if they match, push to an array
 
