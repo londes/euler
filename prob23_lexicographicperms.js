@@ -16,7 +16,9 @@ console.log(permutationsArray.reduce((a, b) => a + b ));
 function generatePermutations(permutationDigits) {
     let perms = [];
 
-    
+    // wondering if doing int access from lastt to first
+    // and pivoting based on each permutation k! values
+    // position in the array
     return [];
 }
 
