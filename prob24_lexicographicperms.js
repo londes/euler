@@ -3,20 +3,23 @@
 // What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
 // input digits
-let permutationDigits = [0,1,2,3,4];
+let permutationDigits = [0,1,2,3,4,5,6,7,8,9];
 perms = generatePermutations(permutationDigits);
 
 console.log('the first value in perms is ' + perms[0]);
 
-// view output:
-outputString = '[';
+// // view output:
+// outputString = '[';
 
-for (let i = 0; i < perms.length; i++) {
-    outputString += ('[' + perms[i] + ',] \n' );
-}
-outputString += ']'
-console.log('our perms output is \n' + generatePermutations(permutationDigits));
-console.log('our prettier output is ' + outputString);
+// for (let i = 0; i < perms.length; i++) {
+//     outputString += ('[' + perms[i] + ',] \n' );
+// }
+// outputString += ']'
+// console.log('our perms output is \n' + generatePermutations(permutationDigits));
+// console.log('our prettier output is ' + outputString);
+
+console.log('the millionth lexicographic permutation of 0-9 is: ' + perms[999999]);
+console.log('that permutation expressed as a value is: ' + getCombinedInteger(perms[999999]));
 
 // accepts an array of digits, determines all permutations
 function generatePermutations(inputArr) {
@@ -41,9 +44,6 @@ function generatePermutations(inputArr) {
 
 // function getCombinedInteger accepts an array of digits,
 // returns them combined into one digit
-
-// turns out we don't use this code, so commenting it out here
-// but keeping it for safekeeping
 
 function getCombinedInteger (digitsArray) {
     let sum = 0;
