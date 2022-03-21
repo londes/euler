@@ -3,10 +3,33 @@
 // What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
 // input digits
-let permutationDigits = [0,1,2,3];
+let permutationDigits = [0,1,2];
 
-// assume our starting array is the smallest value, and
-// that integers are listed in ascending order
+console.log('the first value in perms is ');
+console.log('our output is ' + generatePermutations(permutationDigits));
+
+// accepts an array of digits, determines all permutations
+function generatePermutations(inputArr) {
+    let perms = [];
+
+    const permute = (arr, m = [] ) => {
+        if (arr.length === 0){
+            perms.push(m);
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                let curr = arr.slice();
+                let next = curr.splice(i, 1);
+                permute(curr.slice(), m.concat(next));
+            }
+        }
+    }
+    // wondering if doing int access from lastt to first
+    // and pivoting based on each permutation k! values
+    // position in the array
+    permute(inputArr)
+    return perms
+}
+
 
 // function getCombinedInteger accepts an array of digits,
 // returns them combined into one digit
@@ -15,27 +38,5 @@ function getCombinedInteger (digitsArray) {
     digitsArray.forEach((digit, index, self) => {
         sum += digit * Math.pow(10, self.length-index-1); 
     });
-    return sum;
+    return sum
 }
-
-console.log(getCombinedInteger(permutationDigits));
-
-/*
-
-what are the permutations in order of 0,1,2,3
-
-0123
-0132
-0213
-0231
-0312
-0321
-
-1023
-1032
-1203
-1230
-1302
-1320
-
-*/
