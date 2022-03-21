@@ -3,7 +3,7 @@
 // What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
 // input digits
-let permutationDigits = [0,1,2];
+let permutationDigits = [0,1,2,3,4];
 perms = generatePermutations(permutationDigits);
 
 console.log('the first value in perms is ' + perms[0]);
@@ -44,10 +44,11 @@ function generatePermutations(inputArr) {
 
 // turns out we don't use this code, so commenting it out here
 // but keeping it for safekeeping
-// function getCombinedInteger (digitsArray) {
-//     let sum = 0;
-//     digitsArray.forEach((digit, index, self) => {
-//         sum += digit * Math.pow(10, self.length-index-1); 
-//     });
-//     return sum
-// }
+
+function getCombinedInteger (digitsArray) {
+    let sum = 0;
+    digitsArray.forEach((digit, index, self) => {
+        sum += digit * Math.pow(10, self.length-index-1); 
+    });
+    return sum
+}
