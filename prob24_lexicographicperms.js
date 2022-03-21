@@ -4,15 +4,25 @@
 
 // input digits
 let permutationDigits = [0,1,2];
+perms = generatePermutations(permutationDigits);
 
-console.log('the first value in perms is ');
-console.log('our output is ' + generatePermutations(permutationDigits));
+console.log('the first value in perms is ' + perms[0]);
+
+// view output:
+outputString = '[';
+
+for (let i = 0; i < perms.length; i++) {
+    outputString += ('[' + perms[i] + ',] \n' );
+}
+outputString += ']'
+console.log('our perms output is \n' + generatePermutations(permutationDigits));
+console.log('our prettier output is ' + outputString);
 
 // accepts an array of digits, determines all permutations
 function generatePermutations(inputArr) {
     let perms = [];
 
-    const permute = (arr, m = [] ) => {
+    const permute = (arr, m = []) => {
         if (arr.length === 0){
             perms.push(m);
         } else {
@@ -23,9 +33,7 @@ function generatePermutations(inputArr) {
             }
         }
     }
-    // wondering if doing int access from lastt to first
-    // and pivoting based on each permutation k! values
-    // position in the array
+
     permute(inputArr)
     return perms
 }
@@ -33,10 +41,13 @@ function generatePermutations(inputArr) {
 
 // function getCombinedInteger accepts an array of digits,
 // returns them combined into one digit
-function getCombinedInteger (digitsArray) {
-    let sum = 0;
-    digitsArray.forEach((digit, index, self) => {
-        sum += digit * Math.pow(10, self.length-index-1); 
-    });
-    return sum
-}
+
+// turns out we don't use this code, so commenting it out here
+// but keeping it for safekeeping
+// function getCombinedInteger (digitsArray) {
+//     let sum = 0;
+//     digitsArray.forEach((digit, index, self) => {
+//         sum += digit * Math.pow(10, self.length-index-1); 
+//     });
+//     return sum
+// }
