@@ -23,6 +23,7 @@ let adjacentGroupSize = 13;
 
 let productFinder = function (range) {
   let compareDigits = thousandDigits.split('');
+  console.log('compare digits: ' + compareDigits)
   let currentDigits = [];
   let currentHighest = 0;
   let currentTotal = 0;

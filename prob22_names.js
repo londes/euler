@@ -22,3 +22,6 @@
 
 // commented all code because I think it makes sense to do this with
 // Python and not JS, going to revisit
+
+// let namesFile = readFileSync('./prob22_names.txt', 'utf-8')
+// console.log(namesFile)
