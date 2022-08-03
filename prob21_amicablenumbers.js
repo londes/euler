@@ -25,12 +25,12 @@ function getFactorsSum (n) {
     if (n == 1) {
         return 1;
     }
-    console.log('the sum of the factors for ' + n + ' are ' + factorsArray.reduce((a, b) => a + b));
+    console.log('the sum of the factors for ' + n + ' is ' + factorsArray.reduce((a, b) => a + b));
     return factorsArray.reduce((a, b) => a + b);
     
 }
 
-// store them in an array of objects
+// store them in an array
 let factorSums = [];
 digitsArray.forEach(digit => {
     factorSums.push(getFactorsSum(digit));
