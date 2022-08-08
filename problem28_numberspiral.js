@@ -22,11 +22,13 @@ function pushCorners (lengthToCorner, cornerLocation) {
         cornerLocation += lengthToCorner;
         cornersPushed++;
         valuesChecked++;
-        if (valuesChecked >= spiralValues.length)
-            break
     }
-    console.log(cornerValues)
-    pushCorners(lengthToCorner+2, cornerLocation)
+    lengthToCorner += 2;
+
+    if (valuesChecked < spiralValues.length-1) {
+        console.log ('we\'re about to hit pushCorners and ltc is: ' + lengthToCorner) 
+        pushCorners(lengthToCorner, cornerLocation)
+    }
 }
 
 pushCorners(lengthToCorner, cornerLocation)
