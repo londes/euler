@@ -3,7 +3,7 @@
 let spiralValues = []
 let cornerValues = []
 
-for (let i = 1; i <= 25; i++)
+for (let i = 1; i <= 1001*1001; i++)
     spiralValues.push(i);
 
 let lengthToCorner = 2;
@@ -39,7 +39,9 @@ function pushCorners () {
 }
 
 pushCorners(lengthToCorner, cornerLocation)
-console.log(cornerValues)
+
+let sum = cornerValues.reduce((a,b) => a+b)
+console.log(sum)
     // push first value
     // increment lengthToCorner by 2
     // push each value that is lengthToCorner away until we have 4 (if we have 4, reset cornersPushed)
