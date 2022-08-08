@@ -1,54 +1,57 @@
-// generate number spiral (figure out how to make an array of 1001 x 1001 grid )
-
+// generate number spiral 
 let spiralValues = []
-let cornerValues = []
 
 for (let i = 1; i <= 1001*1001; i++)
     spiralValues.push(i);
 
+// array to store corner values that we find in spiralValues
+let cornerValues = []
+
+// we have to keep track of the distance from each corner to the next to collect
+// 4 corners, and where we are in the array (in this case, the location of the
+// last corner we pushed)
 let lengthToCorner = 2;
 let cornerLocation = 2;
 
+// the only reason we need to track the # of values checked is to not increment
+// cornerLocation for the first value. Could probably clean this up
 let valuesChecked = 0
 
+// push the '1' value to get things going. see above, this could likely be done better
 cornerValues.push(spiralValues[0])
 
+
+// function: pushCorners
+// accepts: void
+// returns: void (builds cornerValues array containing the values at all identified
+// corners in the spiral)
 function pushCorners () {    
     cornersPushed = 0;
     while (cornersPushed < 4) {
 
-        if (valuesChecked > 0){
+        if (valuesChecked > 0)
             cornerLocation += lengthToCorner;
-            console.log('cornerlocation was just incremented and is now: ' + cornerLocation)
-        }
 
         cornerValues.push(spiralValues[cornerLocation])
-        console.log('we just pushed the value from spiralValues at: ' + cornerLocation)
-        console.log('and lengthtocorner is now: ' + lengthToCorner)
-        console.log('and cornerspushed is: ' + cornersPushed)
         cornersPushed++;
         valuesChecked++;
     }
-    console.log('ltc pre change: ' + lengthToCorner)
     lengthToCorner += 2;
-    console.log('ltc post change: ' + lengthToCorner)
 
-    if (cornerLocation < spiralValues.length-1) {
+    // exit our recursive funciton if we reach the last corner in the spiralValues array
+    if (cornerLocation < spiralValues.length-1)
         pushCorners()
-    }
 }
 
+// kick off our recursive algorithm for the first time
 pushCorners(lengthToCorner, cornerLocation)
 
+// add all corner values from grid (spiral) together
 let sum = cornerValues.reduce((a,b) => a+b)
-console.log(sum)
-    // push first value
-    // increment lengthToCorner by 2
-    // push each value that is lengthToCorner away until we have 4 (if we have 4, reset cornersPushed)
-    // increment lengthToCorner by 2
 
-//// from '1' starting point, grab every 2nd value 4x, 4th value 4x, 6th value 4x, 8th value 4x, etc
-//// for the length of the array (assumes array is correct size)
+// output sum of corners
+console.log(sum)
+
 
 
 
