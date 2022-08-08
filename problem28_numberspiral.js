@@ -4,30 +4,37 @@ let spiralValues = []
 let cornerValues = []
 
 for (let i = 1; i <= 25; i++)
-{
     spiralValues.push(i);
-}
 
 let lengthToCorner = 2;
 let cornerLocation = 2;
 
-let valuesChecked = 0;
+let valuesChecked = 0
 
 cornerValues.push(spiralValues[0])
 
-function pushCorners (lengthToCorner, cornerLocation) {    
+function pushCorners () {    
     cornersPushed = 0;
     while (cornersPushed < 4) {
+
+        if (valuesChecked > 0){
+            cornerLocation += lengthToCorner;
+            console.log('cornerlocation was just incremented and is now: ' + cornerLocation)
+        }
+
         cornerValues.push(spiralValues[cornerLocation])
-        cornerLocation += lengthToCorner;
+        console.log('we just pushed the value from spiralValues at: ' + cornerLocation)
+        console.log('and lengthtocorner is now: ' + lengthToCorner)
+        console.log('and cornerspushed is: ' + cornersPushed)
         cornersPushed++;
         valuesChecked++;
     }
+    console.log('ltc pre change: ' + lengthToCorner)
     lengthToCorner += 2;
+    console.log('ltc post change: ' + lengthToCorner)
 
-    if (valuesChecked < spiralValues.length-1) {
-        console.log ('we\'re about to hit pushCorners and ltc is: ' + lengthToCorner) 
-        pushCorners(lengthToCorner, cornerLocation)
+    if (cornerLocation < spiralValues.length-1) {
+        pushCorners()
     }
 }
 
