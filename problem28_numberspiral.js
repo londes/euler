@@ -7,7 +7,7 @@ for (let i = 1; i <= 1001*1001; i++)
 // array to store corner values that we find in spiralValues
 let cornerValues = []
 
-// we have to keep track of the distance from each corner to the next to collect
+// we have to keep track of the distance from each corner to the next corner to collect
 // 4 corners, and where we are in the array (in this case, the location of the
 // last corner we pushed)
 let lengthToCorner = 2;
@@ -17,7 +17,8 @@ let cornerLocation = 2;
 // cornerLocation for the first value. Could probably clean this up
 let valuesChecked = 0
 
-// push the '1' value to get things going. see above, this could likely be done better
+// push the '1' value in spiralValues manually to get things going. see above, this 
+// could likely be done better
 cornerValues.push(spiralValues[0])
 
 
@@ -38,7 +39,8 @@ function pushCorners () {
     }
     lengthToCorner += 2;
 
-    // exit our recursive funciton if we reach the last corner in the spiralValues array
+    // exit our recursive funciton if we reach the last value (last corner) in the 
+    // spiralValues array
     if (cornerLocation < spiralValues.length-1)
         pushCorners()
 }
